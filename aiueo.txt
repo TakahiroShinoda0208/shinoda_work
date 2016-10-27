@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 shinoda takhairo
 
+=======
+08063180001
+>>>>>>> dev
