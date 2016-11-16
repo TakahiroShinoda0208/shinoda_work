@@ -83,7 +83,7 @@ void sum_map(ifstream &fin1,string &name)
 
       string line;
       vector<string> tmp;
-      map<int,double> hash;
+      map<int,long double> hash;
       int count=0;
 
       getline(fin1,line); //一行目だけ特別処理
