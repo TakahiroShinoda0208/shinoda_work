@@ -1,7 +1,7 @@
 #全パラメータベンチマーク用ツール
 
 #ファイル場所指定
-PLA=~/Documents/Stock/investment/shinoda-work/fx/benchmark4
+PLA=/home/local/27636/stud013/Project/shinoda_work/cbs/tool
 
 
 #各種ツール
@@ -66,6 +66,7 @@ do
 			
 		#statsをまとめた表を出力
 			awk -f $sep ${FILE}.result.tsv > ${FILE}.stats.tsv
+			#awk -f $sep ${FILE}.result.tsv > ${FILE}.${e}.${f}.stats.tsv
 			awk -f $Bench downsample=$a num=$b day=$c norm=$d out=$e inn=$f ${FILE}.stats.tsv >> $FILE.bench
 			
 		#いらないファイルの削除
