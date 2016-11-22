@@ -13,7 +13,7 @@ sep=${PLA}/awk_script/each_stats.awk #各通貨の結果を要約
 Bench=${PLA}/awk_script/sep.collect.bench.awk #ベンチマーク用
 
 #データファイル
-Con=${PLA}/../Confidence/Confidence_coefficient #標本標準偏差データ
+Con=${PLA}/Confidence/Confidence_coefficient #標本標準偏差データ
 
 cd ./
 
@@ -22,8 +22,6 @@ cd ./
 file=$1
 TSV=`basename $1`
 FILE=${TSV/.tsv/}
-ORIGINAL=${TSV/_720.tsv/}
-
 
 
 #全パラメータforloop
@@ -50,7 +48,7 @@ do
 		for e in `seq 50 1 99`
 		do
 
-		    for f in `seq 20 1 70`
+		    for f in `seq 50 1 50`
 
 		    do
 			
@@ -66,7 +64,6 @@ do
 			
 		#statsをまとめた表を出力
 			awk -f $sep ${FILE}.result.tsv > ${FILE}.stats.tsv
-			#awk -f $sep ${FILE}.result.tsv > ${FILE}.${e}.${f}.stats.tsv
 			awk -f $Bench downsample=$a num=$b day=$c norm=$d out=$e inn=$f ${FILE}.stats.tsv >> $FILE.bench
 			
 		#いらないファイルの削除
@@ -79,7 +76,7 @@ do
 	done
 	
 	rm ${FILE}_tmp.tsv
-	
+	rm ${FILE}_${b}.tsv
     done
 done
 

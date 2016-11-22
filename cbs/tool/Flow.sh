@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #ファイルの場所
-PLA=~/Documents/Stock/investment/shinoda-work/fx/benchmark3
+PLA=/home/local/27636/stud013/Project/shinoda_work/cbs/tool
 
 #各種ツール
 
@@ -31,7 +31,7 @@ TSV=${FILE}.tsv
 
 #aliasを貼る
 
-ln -s $1 ./
+#ln -s $1 ./
 
 
 #乖離率を計算
